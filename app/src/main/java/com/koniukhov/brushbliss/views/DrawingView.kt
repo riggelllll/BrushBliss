@@ -9,25 +9,32 @@ import android.graphics.Path
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
+import com.koniukhov.brushbliss.data.BrushTool
+import com.koniukhov.brushbliss.data.CommonBrush
 
 class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) {
     private var drawPath: Path = Path()
     private var canvasPaint: Paint = Paint(Paint.DITHER_FLAG)
-    private var drawPaint: Paint = Paint()
     private var canvasBitmap: Bitmap? = null
     private var drawCanvas: Canvas? = null
 
-    init {
-        setup()
-    }
 
-    private fun setup() {
-        drawPaint.color = Color.BLACK
-        drawPaint.isAntiAlias = true
-        drawPaint.strokeWidth = 8f
-        drawPaint.style = Paint.Style.STROKE
-        drawPaint.strokeJoin = Paint.Join.ROUND
-        drawPaint.strokeCap = Paint.Cap.ROUND
+    private val brush = CommonBrush(
+        Color.RED,
+        200,
+        8f,
+        true,
+        Paint.Style.STROKE,
+        Paint.Join.ROUND,
+        Paint.Cap.ROUND,
+
+    )
+
+    init {
+        val color = Color.rgb(255,111,122)
+
+        brush.setColor(color)
+        brush.updatePaint()
     }
 
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
@@ -41,7 +48,7 @@ class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         canvas.drawBitmap(canvasBitmap!!, 0f, 0f, canvasPaint)
-        canvas.drawPath(drawPath, drawPaint)
+        brush.draw(canvas, drawPath)
     }
 
     override fun onTouchEvent(event: MotionEvent): Boolean {
@@ -53,7 +60,7 @@ class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) 
             MotionEvent.ACTION_MOVE -> drawPath.lineTo(touchX, touchY)
             MotionEvent.ACTION_UP -> {
                 drawPath.lineTo(touchX, touchY)
-                drawCanvas?.drawPath(drawPath, drawPaint)
+                brush.draw(drawCanvas!!, drawPath)
                 drawPath.reset()
             }
             else -> return false
