@@ -9,8 +9,12 @@ import android.graphics.Path
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
-import com.koniukhov.brushbliss.data.BrushTool
 import com.koniukhov.brushbliss.data.CommonBrush
+import com.koniukhov.brushbliss.data.UserSettingsManager
+import com.koniukhov.brushbliss.data.UserSettingsManager.Companion.datastore
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) {
     private var drawPath: Path = Path()
@@ -18,23 +22,13 @@ class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) 
     private var canvasBitmap: Bitmap? = null
     private var drawCanvas: Canvas? = null
 
+    private val userSettingsManager = UserSettingsManager(context.datastore)
+    private val userSettingsFlow = userSettingsManager.userSettingsFlow
 
-    private val brush = CommonBrush(
-        Color.RED,
-        200,
-        8f,
-        true,
-        Paint.Style.STROKE,
-        Paint.Join.ROUND,
-        Paint.Cap.ROUND,
-
-    )
+    private lateinit var brush: CommonBrush
 
     init {
-        val color = Color.rgb(255,111,122)
-
-        brush.setColor(color)
-        brush.updatePaint()
+        initBaseBrush()
     }
 
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
@@ -48,7 +42,9 @@ class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         canvas.drawBitmap(canvasBitmap!!, 0f, 0f, canvasPaint)
-        brush.draw(canvas, drawPath)
+        if (::brush.isInitialized){
+            brush.draw(canvas, drawPath)
+        }
     }
 
     override fun onTouchEvent(event: MotionEvent): Boolean {
@@ -72,5 +68,21 @@ class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) 
     fun clearCanvas() {
         drawCanvas?.drawColor(Color.WHITE)
         invalidate()
+    }
+
+    private fun initBaseBrush(){
+        CoroutineScope(Dispatchers.IO).launch {
+            userSettingsFlow.collect{
+                brush = CommonBrush(
+                    it.color,
+                    it.alpha,
+                    it.strokeWidth,
+                    true,
+                    Paint.Style.STROKE,
+                    Paint.Join.ROUND,
+                    Paint.Cap.ROUND,
+                )
+            }
+        }
     }
 }
