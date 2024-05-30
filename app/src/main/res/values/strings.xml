@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">BrushBliss</string>
+
+    <string name="base_brush">Base brush</string>
+    <string name="custom_brush">Custom brush</string>
+    <string name="color_picker">Color picker</string>
+    <string name="color_palette">Color palette</string>
 </resources>
