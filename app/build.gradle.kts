@@ -55,6 +55,7 @@ dependencies {
     kapt("com.google.dagger:hilt-compiler:2.50")
     implementation("androidx.core:core-splashscreen:1.2.0-alpha01")
     implementation("androidx.datastore:datastore-preferences:1.1.1")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.1")
 
     testImplementation("junit:junit:4.13.2")
 
