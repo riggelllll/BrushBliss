@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.koniukhov.brushbliss.databinding.FragmentDrawingBinding
+import com.koniukhov.brushbliss.util.DRAWING_BOTTOM_SHEET_TAG
 
 class DrawingFragment : Fragment() {
     private var _binding: FragmentDrawingBinding? = null
@@ -27,7 +28,7 @@ class DrawingFragment : Fragment() {
     private fun initClickListeners(){
         binding.bottomSheetBtn.setOnClickListener{
             modalBottomSheet = DrawingBottomSheet()
-            modalBottomSheet.show(childFragmentManager, DrawingBottomSheet.TAG)
+            modalBottomSheet.show(childFragmentManager, DRAWING_BOTTOM_SHEET_TAG)
         }
     }
 }
