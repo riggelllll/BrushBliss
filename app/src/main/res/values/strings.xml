@@ -5,4 +5,11 @@
     <string name="custom_brush">Custom brush</string>
     <string name="color_picker">Color picker</string>
     <string name="color_palette">Color palette</string>
+
+    <string name="close">Close</string>
+    <string name="save">Save</string>
+
+    <string name="dialog_base_brush_title">Set up the base brush</string>
+    <string name="dialog_base_brush_width_text">Choose width</string>
+    <string name="dialog_base_brush_alpha_text">Choose alpha</string>
 </resources>
