@@ -11,3 +11,5 @@ const val BASE_BRUSH_STROKE_STEP = 1
 const val BASE_BRUSH_ALPHA_FROM = 0
 const val BASE_BRUSH_ALPHA_TO = 255
 const val BASE_BRUSH_ALPHA_STEP = 1
+
+const val BASE_BRUSH_DIALOG_TAG = "BaseBrushDialogFragment"
