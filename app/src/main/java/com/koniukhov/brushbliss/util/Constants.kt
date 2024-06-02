@@ -13,3 +13,4 @@ const val BASE_BRUSH_ALPHA_TO = 255
 const val BASE_BRUSH_ALPHA_STEP = 1
 
 const val BASE_BRUSH_DIALOG_TAG = "BaseBrushDialogFragment"
+const val DRAWING_BOTTOM_SHEET_TAG = "DrawingBottomSheet"
