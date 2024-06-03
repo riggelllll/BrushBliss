@@ -29,7 +29,8 @@
                     android:id="@+id/base_brush"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    style="@style/BottomSheetItem">
                     <ImageView
                         android:id="@+id/bs_brush_ic"
                         android:layout_width="25dp"
@@ -50,7 +51,8 @@
                 android:id="@+id/custom_brush"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                style="@style/BottomSheetItem">
                 <ImageView
                     android:id="@+id/cs_brush_ic"
                     android:layout_width="25dp"
@@ -71,7 +73,8 @@
                 android:id="@+id/color_picker"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                style="@style/BottomSheetItem">
                 <ImageView
                     android:id="@+id/col_picker_ic"
                     android:layout_width="25dp"
@@ -92,7 +95,8 @@
                 android:id="@+id/color_palette"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                style="@style/BottomSheetItem">
                 <ImageView
                     android:id="@+id/col_palette_ic"
                     android:layout_width="25dp"
