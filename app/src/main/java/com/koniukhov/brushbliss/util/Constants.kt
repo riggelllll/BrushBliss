@@ -18,6 +18,10 @@ const val HEX_LENGTH = 6
 
 const val HEXADECIMAL_RADIX = 16
 
+const val RED_TAG = "red"
+const val GREEN_TAG = "green"
+const val BLUE_TAG = "blue"
+
 const val BASE_BRUSH_DIALOG_TAG = "BaseBrushDialogFragment"
 const val DRAWING_BOTTOM_SHEET_TAG = "DrawingBottomSheet"
 const val COLOR_PICKER_DIALOG_TAG = "ColorPickerDialogFragment"
