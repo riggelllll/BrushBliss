@@ -140,4 +140,11 @@
     <color name="md_theme_surfaceContainer_highContrast">#FCEAE5</color>
     <color name="md_theme_surfaceContainerHigh_highContrast">#F7E4E0</color>
     <color name="md_theme_surfaceContainerHighest_highContrast">#F1DFDA</color>
+
+    <color name="red_gradient_start">#8b0000</color>
+    <color name="red_gradient_end">#ff6666</color>
+    <color name="green_gradient_start">#006400</color>
+    <color name="green_gradient_end">#90ee00</color>
+    <color name="blue_gradient_start">#00008b</color>
+    <color name="blue_gradient_end">#add8e6</color>
 </resources>
