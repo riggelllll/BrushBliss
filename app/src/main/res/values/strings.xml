@@ -12,4 +12,9 @@
     <string name="dialog_base_brush_title">Set up the base brush</string>
     <string name="dialog_base_brush_width_text">Choose width</string>
     <string name="dialog_base_brush_alpha_text">Choose alpha</string>
+
+    <string name="hex_hint">HEX Color</string>
+    <string name="hex_prefix">#</string>
+
+    <string name="dialog_color_picker_title">Set up the color</string>
 </resources>
