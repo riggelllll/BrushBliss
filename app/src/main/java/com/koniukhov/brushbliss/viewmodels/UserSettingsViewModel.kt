@@ -27,4 +27,10 @@ class UserSettingsViewModel @Inject constructor(private val userSettingsManager:
             userSettingsManager.updateAlpha(newAlpha)
         }
     }
+
+    fun updateColor(newColor: Int){
+        viewModelScope.launch(dispatcherIO) {
+            userSettingsManager.updateColor(newColor)
+        }
+    }
 }
