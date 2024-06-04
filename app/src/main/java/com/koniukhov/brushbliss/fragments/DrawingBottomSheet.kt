@@ -9,7 +9,9 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.koniukhov.brushbliss.databinding.DrawingBottomSheetContentBinding
 import com.koniukhov.brushbliss.dialogs.BaseBrushDialogFragment
+import com.koniukhov.brushbliss.dialogs.ColorPickerDialogFragment
 import com.koniukhov.brushbliss.util.BASE_BRUSH_DIALOG_TAG
+import com.koniukhov.brushbliss.util.COLOR_PICKER_DIALOG_TAG
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -43,6 +45,10 @@ class DrawingBottomSheet : BottomSheetDialogFragment() {
         binding.baseBrush.setOnClickListener{
             val dialog = BaseBrushDialogFragment()
             dialog.show(parentFragmentManager, BASE_BRUSH_DIALOG_TAG)
+        }
+        binding.colorPicker.setOnClickListener {
+            val dialog = ColorPickerDialogFragment()
+            dialog.show(parentFragmentManager, COLOR_PICKER_DIALOG_TAG)
         }
     }
 
