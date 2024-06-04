@@ -39,10 +39,10 @@
                 android:id="@+id/alpha_slider"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:valueFrom="@{ConstantsKt.BASE_BRUSH_ALPHA_FROM}"
-                android:valueTo="@{ConstantsKt.BASE_BRUSH_ALPHA_TO}"
+                android:valueFrom="@{ConstantsKt.BYTE_FROM}"
+                android:valueTo="@{ConstantsKt.BYTE_TO}"
                 android:value="255"
-                android:stepSize="@{ConstantsKt.BASE_BRUSH_ALPHA_STEP}"/>
+                android:stepSize="@{ConstantsKt.STEP_BY_ONE}"/>
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
