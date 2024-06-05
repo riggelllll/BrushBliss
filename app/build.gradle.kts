@@ -44,6 +44,8 @@ android {
 
 dependencies {
     val navVersion = "2.7.7"
+    val roomVersion = "2.6.1"
+
 
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
@@ -56,6 +58,9 @@ dependencies {
     implementation("androidx.core:core-splashscreen:1.2.0-alpha01")
     implementation("androidx.datastore:datastore-preferences:1.1.1")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.1")
+    implementation("androidx.room:room-runtime:$roomVersion")
+    kapt("androidx.room:room-compiler:$roomVersion")
+
 
     testImplementation("junit:junit:4.13.2")
 
