@@ -10,8 +10,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.BrushBliss"
-        tools:targetApi="31">
+        android:theme="@style/Theme.BrushBliss.Starting"
+        tools:targetApi="31"
+        android:name=".Application">
         <activity
             android:name=".MainActivity"
             android:exported="true">
